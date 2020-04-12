@@ -25,8 +25,8 @@ interface MealIngredient {
 export interface Meal {
   id: string;
   name: string;
-  createdDate: string;
-  eatenDate: string;
+  createdDate?: string;
+  eatenDate?: string;
   recipeInfo?: {
     boughtIngredients: boolean;
     rating?: number;
