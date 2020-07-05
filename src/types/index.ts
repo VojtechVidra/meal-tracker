@@ -14,6 +14,14 @@ export interface Ingredient {
     fiber: number;
     salt: number;
   };
+  // Plan for future:
+  // attributes: [
+  //   {
+  //     id: string;
+  //     name: string;
+  //     value: number;
+  //   }
+  // ]
   content: string;
 }
 
@@ -24,13 +32,21 @@ interface MealIngredient {
 
 export interface Meal {
   id: string;
+  // cooked meal can point to it's recipe
+  recipeId?: string;
   name: string;
   createdDate?: string;
+  // cookedDate?: string; // ??
   eatenDate?: string;
+  // ??
   recipeInfo?: {
     boughtIngredients: boolean;
     rating?: number;
   };
   ingredients: MealIngredient[];
+  // HTML content, steps of cooking
   content: string;
+  // Used to calculate calories per gram of final meal
+  // in grams
+  finalWeight?: number;
 }
